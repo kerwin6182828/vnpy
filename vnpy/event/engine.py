@@ -66,7 +66,7 @@ class EventEngine:
         First ditribute event to those handlers registered listening
         to this type.
 
-        Then distrubute event to those general handlers which listens
+        Then distribute event to those general handlers which listens
         to all types.
         """
         if event.type in self._handlers:
