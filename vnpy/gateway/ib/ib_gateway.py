@@ -633,11 +633,7 @@ class IbApi(EWrapper):
         """
         Callback of history data update.
         """
-        # When requesting daily and weekly history data, the date format is "%Y%m%d"
-        if len(ib_bar.date) > 8:
-            dt = datetime.strptime(ib_bar.date, "%Y%m%d %H:%M:%S")
-        else:
-            dt = datetime.strptime(ib_bar.date, "%Y%m%d")
+        dt = datetime.strptime(ib_bar.date, "%Y%m%d %H:%M:%S")
         dt = self.local_tz.localize(dt)
 
         bar = BarData(
